@@ -1,4 +1,4 @@
-# Go Book
+# Go Book :)
 
 **Name:** *Suriya*
 
@@ -9,7 +9,6 @@
 ## Chapter 2
 
 * My first program
-* Something
 
 ## Chapter 3
 
