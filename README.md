@@ -8,6 +8,9 @@
 
 ## Chapter 2
 
+* My first program
+* Something
+
 ## Chapter 3
 
 ## Chapter 4
