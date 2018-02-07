@@ -8,7 +8,8 @@
 
 ## Chapter 2
 
-* My first program
+chapter 2-1 = My first program
+chapter 2-2 = Modify Program
 
 ## Chapter 3
 
