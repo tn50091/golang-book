@@ -14,5 +14,7 @@
 ## Chapter 3
 
 * chapter 3-1 = Zero Value
+* chapter 3-2 = String
+* chapter 3-3 = Floating Point
 
 ## Chapter 4
