@@ -8,8 +8,8 @@
 
 ## Chapter 2
 
-chapter 2-1 = My first program
-chapter 2-2 = Modify Program
+* chapter 2-1 = My first program
+* chapter 2-2 = My name is program
 
 ## Chapter 3
 
