@@ -13,4 +13,6 @@
 
 ## Chapter 3
 
+* chapter 3-1 = Zero Value
+
 ## Chapter 4
