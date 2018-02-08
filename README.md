@@ -19,3 +19,4 @@
 
 ## Chapter 4
 * chapter 4-1 = Variables
+* chapter 4-2 = Input/Output
