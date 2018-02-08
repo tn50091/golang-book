@@ -18,3 +18,4 @@
 * chapter 3-3 = Floating Point
 
 ## Chapter 4
+* chapter 4-1 = Variables
