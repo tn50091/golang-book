@@ -1,11 +1,13 @@
 package main
 
 import (
+	"time"
 	"fmt"
 	"math/rand"
 )
 
 func main() {
+	rand.Seed(time.Now().UTC().UnixNano())
 	var input int
 	var output int = rand.Intn(10)
 	fmt.Println("Output: ", output)
