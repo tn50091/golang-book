@@ -24,4 +24,5 @@
 ## Chapter 5
 * chapter 5-1 = For Loop
 * chapter 5-2 = For-if
-* chapter 5-5 = For-switch
+* chapter 5-3 = For-switch
+* chapter 5-4 = For-switch
