@@ -20,3 +20,8 @@
 ## Chapter 4
 * chapter 4-1 = Variables
 * chapter 4-2 = Input/Output
+
+## Chapter 5
+* chapter 5-1 = For Loop
+* chapter 5-2 = For-if
+* chapter 5-5 = For-switch
