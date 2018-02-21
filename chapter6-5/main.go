@@ -1,6 +1,7 @@
 package main
 
 import (
+	"strconv"
 	"fmt"
 )
 
@@ -12,13 +13,12 @@ func main() {
 }
 
 func FizzBuzz(i int) string {
-	if i%15 == 0 {
-		return "FizzBuzz"
-	} else if i%3 == 0 {
-		return "Fizz"
-	} else if i%5 == 0 {
-		return "Buzz"
-	} else {
-		return ""
+	ln := [3]int{15,3,5}
+	ret := [3]string{"FizzBuzz","Fizz","Buzz"}
+	for j:=0;j<len(ln);j++ {
+		if i%ln[j] == 0 {
+			return ret[j]
+		}
 	}
+	return strconv.Itoa(i)
 }
