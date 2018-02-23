@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func imain() {
 	fmt.Println(weatherCelcius(25, "Bankgok few clouds"))
 	fmt.Println(weatherCelcius(34, "Tak sunny"))
 	fmt.Println(weatherCelcius(17, "Phuket rainy"))
