@@ -35,21 +35,11 @@ func (v *VendingMachine) Change(c int) (change string) {
 	var str string
 	value := [...]int{10,5,2,1}
 	coins := [...]string{"T","F","TW","0"}
-	if c >= value[0] { 
-		c -= value[0]
-		str += ","+coins[0] 
-	}
-	if c >= value[1] { 
-		c -= value[1]
-		str += ","+coins[1] 
-	}
-	if c >= value[2] { 
-		c -= value[2]
-		str += ","+coins[2]
-	}
-	if c >= value[3] { 
-		c -= value[3]
-		str += ","+coins[3] 
+	for i:=0;i<len(value);i++ {
+		if c >= value[i] { 
+			c -= value[i]
+			str += ","+coins[i] 
+		}
 	}
 	return str
 }
