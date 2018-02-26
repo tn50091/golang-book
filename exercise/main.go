@@ -24,8 +24,15 @@ func (v *VendingMachine) SelectSD() string {
 }
 
 func (v *VendingMachine) SelectCC() string {
+	price := 12
+	change := v.insertedMoney - price
+	//v.insertedMoney = 0
+	return "CC"+ v.Change(change)
+}
+
+func (v *VendingMachine) Change(c int) (change string) {
 	v.insertedMoney = 0
-	return "CC"+",F,TW,O"
+	return ",F,TW,O"
 }
 
 func main() {
