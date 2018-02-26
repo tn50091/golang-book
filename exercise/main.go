@@ -15,7 +15,6 @@ func (v VendingMachine) InsertedMoney() int {
 }
 
 func (v *VendingMachine) InsertCoin(coin string) {
-	//v.insertedMoney = 10
 	v.insertedMoney += v.coins[coin]
 }
 
@@ -33,8 +32,26 @@ func (v *VendingMachine) SelectCC() string {
 
 func (v *VendingMachine) Change(c int) (change string) {
 	v.insertedMoney = 0
-	if c == 0 { return "" }
-	return ",F,TW,O"
+	var str string
+	value := [...]int{10,5,2,1}
+	coins := [...]string{"T","F","TW","0"}
+	if c >= value[0] { 
+		c -= value[0]
+		str += ","+coins[0] 
+	}
+	if c >= value[1] { 
+		c -= value[1]
+		str += ","+coins[1] 
+	}
+	if c >= value[2] { 
+		c -= value[2]
+		str += ","+coins[2]
+	}
+	if c >= value[3] { 
+		c -= value[3]
+		str += ","+coins[3] 
+	}
+	return str
 }
 
 func main() {
