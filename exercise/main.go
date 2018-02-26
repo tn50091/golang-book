@@ -20,13 +20,13 @@ func (v *VendingMachine) InsertCoin(coin string) {
 }
 
 func (v *VendingMachine) SelectSD() string {
-	price := 18
+	price := v.items["SD"]
 	change := v.insertedMoney - price
 	return "SD"+ v.Change(change)
 }
 
 func (v *VendingMachine) SelectCC() string {
-	price := 12
+	price := v.items["CC"]
 	change := v.insertedMoney - price
 	return "CC"+ v.Change(change)
 }
@@ -39,7 +39,8 @@ func (v *VendingMachine) Change(c int) (change string) {
 
 func main() {
 	var coins = map[string]int{"T":10,"F":5,"TW":2,"O":1}
-	vm := VendingMachine{coins: coins}
+	var items = map[string]int{"SD":18,"CC":12,"DW":7}
+	vm := VendingMachine{coins: coins, items: items}
 	fmt.Println("Initial Money:", vm.InsertedMoney())	// Inserted Money: 0
 	vm.InsertCoin("T")
 	vm.InsertCoin("F")
