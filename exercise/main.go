@@ -25,7 +25,7 @@ func (v *VendingMachine) SelectSD() string {
 
 func (v *VendingMachine) SelectCC() string {
 	v.insertedMoney = 0
-	return "CC"
+	return "CC"+",F,TW,O"
 }
 
 func main() {
@@ -44,4 +44,9 @@ func main() {
 	fmt.Println("Inserted Money:", vm.InsertedMoney())	// Inserted Money: 12
 	can = vm.SelectCC()
 	fmt.Println("Item/Change:", can)	//CC
+	vm.InsertCoin("T")
+	vm.InsertCoin("T")
+	fmt.Println("Inserted Money:", vm.InsertedMoney())	// Inserted Money: 20
+	can = vm.SelectCC()
+	fmt.Println("Item/Change:", can)	//CC,F,TW,O
 }
