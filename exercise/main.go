@@ -15,10 +15,7 @@ func (v VendingMachine) InsertedMoney() int {
 
 func (v *VendingMachine) InsertCoin(coin string) {
 	//v.insertedMoney = 10
-	if coin == "T" {v.insertedMoney += 10}
-	if coin == "F"  {v.insertedMoney += 5}
-	if coin == "TW"  {v.insertedMoney += 2}
-	if coin == "O"  {v.insertedMoney += 1}
+	v.insertedMoney += v.coins[coin]
 }
 
 func main() {
