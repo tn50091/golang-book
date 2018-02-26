@@ -6,7 +6,7 @@ import (
 
 type NewVendingMachine struct{
 	coins int
-	items string
+	items int
 }
 
 func (v *NewVendingMachine) InsertCoin(text string) {
@@ -21,23 +21,23 @@ func (v NewVendingMachine) GetInsertedMoney() int{
 }
 
 func (v *NewVendingMachine) SelectCC() string {
-	v.items = "CC"
-	cash := v.coins-12
-	output := v.items
+	v.items = 12
+	cash := v.coins-v.items
+	output := "CC"
 	return GenOutput(cash, output)
 }
 
 func (v *NewVendingMachine) SelectSD() string {
-	v.items = "SD"
-	cash := v.coins-18
-	output := v.items
+	v.items = 18
+	cash := v.coins-v.items
+	output := "SD"
 	return GenOutput(cash, output)
 }
 
 func (v *NewVendingMachine) CoinReturn() string {
-	v.items = ""
-	cash := v.coins-0
-	output := v.items
+	v.items = 0
+	cash := v.coins-v.items
+	output := ""
 	return GenOutput(cash, output)
 }
 
@@ -67,8 +67,8 @@ func GenOutput (cash int, output string) string {
 	return output
 }
 
-func main() {
-	vm := NewVendingMachine{0,""}
+func Imain() {
+	vm := NewVendingMachine{0,0}
 	vm.InsertCoin("T")
 	vm.InsertCoin("F")
 	vm.InsertCoin("TW")
