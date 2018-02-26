@@ -19,19 +19,20 @@ func (v *VendingMachine) InsertCoin(coin string) {
 }
 
 func (v *VendingMachine) SelectSD() string {
+	v.insertedMoney = 0
 	price := v.items["SD"]
 	change := v.insertedMoney - price
 	return "SD"+ v.Change(change)
 }
 
 func (v *VendingMachine) SelectCC() string {
+	v.insertedMoney = 0
 	price := v.items["CC"]
 	change := v.insertedMoney - price
 	return "CC"+ v.Change(change)
 }
 
 func (v *VendingMachine) Change(c int) (change string) {
-	v.insertedMoney = 0
 	var str string
 	value := [...]int{10,5,2,1}
 	coins := [...]string{"T","F","TW","0"}
@@ -39,9 +40,16 @@ func (v *VendingMachine) Change(c int) (change string) {
 		if c >= value[i] { 
 			c -= value[i]
 			str += ","+coins[i] 
+			i--
 		}
 	}
 	return str
+}
+
+func (v *VendingMachine) CoinReturn() string {
+	coins := v.Change(v.insertedMoney)
+	v.insertedMoney = 0
+	return coins[1:len(coins)]
 }
 
 func main() {
@@ -66,4 +74,10 @@ func main() {
 	fmt.Println("Inserted Money:", vm.InsertedMoney())	// Inserted Money: 20
 	can = vm.SelectCC()
 	fmt.Println("Item/Change:", can)	//CC,F,TW,O
+	vm.InsertCoin("T")
+	vm.InsertCoin("T")
+	vm.InsertCoin("F")
+	fmt.Println("Inserted Money:", vm.InsertedMoney())	// Inserted Money: 25
+	can = vm.CoinReturn()
+	fmt.Println("Item/Change:", can)	//T,T,F
 }
